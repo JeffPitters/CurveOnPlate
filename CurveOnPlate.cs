@@ -41,7 +41,7 @@ class Base
   StreamReader file=new StreamReader(dir+f);
   while ((line=file.ReadLine())!=null)
    vertexList.Add(Vertex.FromString(line));
-  file.Close(); 
+  file.Close();
   break;
   }
  
@@ -67,13 +67,13 @@ class Base
    Swap (ref secondgr, ref onegr);
    if(secondgr<levgr || onegr>pravgr)
    flag=false;
-   else 
+   else
    {
    if(secondgr<pravgr)
    pravgr=secondgr;
    if(onegr>levgr)
    levgr=onegr;
-   }  
+   }
    }
    
    return flag;
@@ -98,38 +98,38 @@ class Base
   
   public double Rad
   {
-  get 
-  { 
+  get
+  {
   return r;
   }
-  set 
-  { 
-        if (value>=0 && value<=Base.Radius) 
+  set
+  {
+        if (value>=0 && value<=Base.Radius)
          r=value;
-        else throw new Exception("Некорректное значение радиуса у одной из вершин"); 
+        else throw new Exception("Некорректное значение радиуса у одной из вершин");
   }
   }
   
   public double Ugol
   {
-  get 
+  get
   {
   return fi;
-  } 
-  set 
-  { 
-  double a=2*Math.PI;
-  fi=value;
-  while (fi<0)
-  {
-  fi+=a;
   }
-  while (fi>a)
+  set
   {
-  fi-=a;
+    double a=2*Math.PI;
+    fi=value;
+    while (fi<0)
+    {
+      fi+=a;
+    }
+    while (fi>a)
+    {
+      fi-=a;
+    }
+    
   }
-  
-  }  
   }
   
   public double Absciss
@@ -141,7 +141,7 @@ class Base
   set
   {
     x=value;
-  }  
+  }
   }
   
   public double Ordinat
@@ -153,7 +153,7 @@ class Base
   set
   {
     y=value;
-  } 
+  }
   }
   
   public override string ToString()
